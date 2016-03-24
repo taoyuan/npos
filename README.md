@@ -9,11 +9,8 @@ $ npm install --save nescpos
 
 ## Usage
 
-```js
-var nescpos = require('nescpos');
+__Coming Soon__
 
-nescpos('Rainbow');
-```
 ## License
 
  © [taoyuan]()
