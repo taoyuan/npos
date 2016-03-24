@@ -1,0 +1,59 @@
+{
+  "name": "nescpos",
+  "version": "0.0.0",
+  "description": "A ESC/POS library for node.js",
+  "homepage": "",
+  "author": {
+    "name": "taoyuan",
+    "email": "towyuan@outlook.com",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "esc",
+    "pos",
+    "escpos",
+    "parse",
+    "parser",
+    "print",
+    "printer",
+    "thermal",
+    "image",
+    "graphic",
+    "bitmap"
+  ],
+  "dependencies": {
+    "iconv-lite": "^0.4.13",
+    "jimp": "^0.2.21",
+    "lodash": "^4.6.1",
+    "mutable-buffer": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^2.4.0",
+    "eslint-config-xo-space": "^0.11.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-mocha": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-nsp": "^2.3.1",
+    "gulp-coveralls": "^0.1.4"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "taoyuan/nescpos",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "private": true
+}
