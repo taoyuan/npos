@@ -11,8 +11,10 @@ console.log(result.commands);
 
 console.log('Raster Image:');
 
+var text = '';
 _.forEach(result.commands, function (cmd) {
   if (cmd.ctrl === 'GS' && cmd.fn === 'v0') {
-    raster.decode(raw, cmd.offset).print();
+    text += raster.decode(raw, cmd.offset).render();
   }
 });
+console.log(text);
