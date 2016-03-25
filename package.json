@@ -26,29 +26,34 @@
     "bitmap"
   ],
   "dependencies": {
-    "async": "^2.0.0-rc.2",
     "bluebird": "^3.3.4",
     "get-pixels": "^3.3.0",
-    "hexy": "^0.2.7",
     "iconv-lite": "^0.4.13",
     "jimp": "^0.2.21",
     "lodash": "^4.6.1",
     "mutable-buffer": "^2.0.1",
-    "qrcode": "^0.4.2",
+    "proback": "^1.0.3",
+    "qrcode": "^0.4.2"
+  },
+  "optionalDependencies": {
+    "async": "^2.0.0-rc.2",
+    "hexy": "^0.2.7",
     "usb": "^1.1.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^2.4.0",
     "eslint-config-xo-space": "^0.11.0",
     "gulp": "^3.9.1",
+    "gulp-coveralls": "^0.1.4",
     "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-line-ending-corrector": "^1.0.1",
     "gulp-istanbul": "^0.10.3",
+    "gulp-line-ending-corrector": "^1.0.1",
     "gulp-mocha": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
     "gulp-nsp": "^2.3.1",
-    "gulp-coveralls": "^0.1.4"
+    "gulp-plumber": "^1.1.0",
+    "mocha": "^2.4.5"
   },
   "eslintConfig": {
     "extends": "xo-space",
