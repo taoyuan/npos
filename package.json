@@ -26,10 +26,16 @@
     "bitmap"
   ],
   "dependencies": {
+    "async": "^2.0.0-rc.2",
+    "bluebird": "^3.3.4",
+    "get-pixels": "^3.3.0",
+    "hexy": "^0.2.7",
     "iconv-lite": "^0.4.13",
     "jimp": "^0.2.21",
     "lodash": "^4.6.1",
-    "mutable-buffer": "^2.0.1"
+    "mutable-buffer": "^2.0.1",
+    "qrcode": "^0.4.2",
+    "usb": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "^2.4.0",
