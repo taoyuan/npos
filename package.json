@@ -1,6 +1,6 @@
 {
   "name": "npos",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A ESC/POS library for node.js",
   "homepage": "",
   "author": {
