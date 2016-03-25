@@ -1,5 +1,5 @@
 {
-  "name": "nescpos",
+  "name": "npos",
   "version": "0.0.0",
   "description": "A ESC/POS library for node.js",
   "homepage": "",
@@ -56,10 +56,10 @@
       "mocha": true
     }
   },
-  "repository": "taoyuan/nescpos",
+  "repository": "taoyuan/npos",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
   },
-  "private": true
+  "license": "MIT"
 }

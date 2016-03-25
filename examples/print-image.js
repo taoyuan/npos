@@ -1,14 +1,14 @@
 'use strict';
 
 var path = require('path');
-var nescpos = require('../');
+var npos = require('../');
 
-// var device = new nescpos.Console();
-var device = new nescpos.USB();
-var printer = new nescpos.Printer(device);
+// var device = new npos.Console();
+var device = new npos.USB();
+var printer = new npos.Printer(device);
 
 device.open(function () {
-  nescpos.graphic.fromImage(path.join(__dirname, 'fixtures', 'images', 'tux.png')).then(function (g) {
+  npos.graphic.fromImage(path.join(__dirname, 'fixtures', 'images', 'tux.png')).then(function (g) {
     printer
       .align('ct')
       .bitimage(g, 's8')

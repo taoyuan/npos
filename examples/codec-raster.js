@@ -1,13 +1,13 @@
 "use strict";
 
 var path = require('path');
-var nescpos = require('..');
-var raster = nescpos.codecs.raster;
+var npos = require('..');
+var raster = npos.codecs.raster;
 
-var file = './fixtures/raws/raster-1';
+var file = './fixtures/raws/raster-2';
 var raw = require(file);
 
-var result = nescpos.bitimage();
+var result = npos.bitimage();
 var image = raw;
 while (image = raster.decode(image)) {
   result.append(image);

@@ -1,11 +1,11 @@
 "use strict";
 
 var _ = require('lodash');
-var nescpos = require('../');
-var parser = nescpos.Parser();
-var raster = nescpos.codecs.raster;
+var npos = require('../');
+var parser = npos.Parser();
+var raster = npos.codecs.raster;
 
-var raw = require('./fixtures/raws/raster-1');
+var raw = require('./fixtures/raws/raster-2');
 var result = parser.parse(raw);
 console.log(result.commands);
 
