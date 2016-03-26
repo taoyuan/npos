@@ -3,18 +3,19 @@
 var fs = require('fs');
 var path = require('path');
 var npos = require('../');
-var Parser = npos.Parser;
 var raster = npos.codecs.raster;
 
-var parser = new Parser();
+var parser = npos.parser();
 
 parser.use(function (ctx) {
   if (ctx.node.type === 'raster' && ctx.node.data) {
-    ctx.data = ctx.node.data.render();
+    ctx.text = ctx.text || '';
+    ctx.text += ctx.node.data.render();
+    ctx.end();
   }
 });
 
-var raw = fs.readFileSync(path.join(__dirname, 'fixtures/raws/raster.bin'));
-parser.parse(raw).then(function (data) {
-  console.log(data);
+var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster.bin'));
+parser.parse(raw).then(function (context) {
+  console.log(context.text);
 });

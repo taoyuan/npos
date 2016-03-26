@@ -5,7 +5,7 @@ var path = require('path');
 var npos = require('..');
 var raster = npos.codecs.raster;
 
-var file = './fixtures/raws/raster.bin';
+var file = './fixtures/raster.bin';
 var raw = fs.readFileSync(file);
 
 var result = npos.bitimage();
