@@ -35,6 +35,7 @@
     "iconv-lite": "^0.4.13",
     "jimp": "^0.2.21",
     "lodash": "^4.6.1",
+    "middist": "^0.2.4",
     "mutable-buffer": "^2.0.1",
     "proback": "^1.0.3",
     "qr-image": "^3.1.0"
