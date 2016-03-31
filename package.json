@@ -26,12 +26,11 @@
     "bitmap"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.com"
+    "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
     "chalk": "^1.1.1",
-    "get-pixels": "^3.3.0",
     "iconv-lite": "^0.4.13",
     "jimp": "^0.2.21",
     "lodash": "^4.6.1",

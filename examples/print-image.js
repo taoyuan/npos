@@ -3,8 +3,8 @@
 var path = require('path');
 var npos = require('../');
 
-// var device = new npos.Console();
-var device = new npos.USB();
+var device = new npos.Console();
+// var device = new npos.USB();
 var printer = new npos.Printer(device);
 
 device.open(function () {
