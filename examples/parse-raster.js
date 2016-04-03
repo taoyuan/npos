@@ -7,15 +7,10 @@ var raster = npos.codecs.raster;
 
 var parser = npos.parser();
 
-parser.use(function (ctx) {
-  if (ctx.node.type === 'raster' && ctx.node.data) {
-    ctx.text = ctx.text || '';
-    ctx.text += ctx.node.data.render();
-    ctx.end();
-  }
-});
-
 var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster.bin'));
-parser.parse(raw).then(function (context) {
-  console.log(context.text);
+console.time('parse');
+parser.parse(raw).then(function (ast) {
+  console.timeEnd('parse');
+  // console.log(npos.graphic.render(ast.entries[0].data));
+  // ast.entries[0].data.save('test.bmp');
 });

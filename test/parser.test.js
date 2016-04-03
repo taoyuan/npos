@@ -24,20 +24,20 @@ describe('Parser', function () {
     it('should parse textual raw data', function () {
       var parser = npos.parser();
       var raw = require('./fixtures/text-1');
-      return parser.parse(raw).then(function (context) {
-        assert.ok(context);
-        assert.ok(context.ast);
-        assert.ok(context.options);
+      return parser.parse(raw).then(function (ast) {
+        assert.ok(ast);
+        assert.lengthOf(ast.entries, 1);
+        assert.ok(ast.entries[0].data);
       });
     });
 
     it('should parse raster raw data', function () {
       var parser = npos.parser();
-      var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster.bin'));
-      parser.parse(raw).then(function (context) {
-        assert.ok(context);
-        assert.ok(context.ast);
-        assert.ok(context.options);
+      var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster-2.bin'));
+      parser.parse(raw).then(function (ast) {
+        assert.ok(ast);
+        assert.lengthOf(ast.entries, 1);
+        assert.ok(ast.entries[0].data);
       });
 
     });

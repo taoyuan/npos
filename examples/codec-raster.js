@@ -3,17 +3,14 @@
 var fs = require('fs');
 var path = require('path');
 var npos = require('..');
+var renderer = require('../lib/renderer');
 var raster = npos.codecs.raster;
 
-var file = './fixtures/raster.bin';
+var file =path.join(__dirname, 'fixtures', 'raster.bin');
 var raw = fs.readFileSync(file);
 
-var result = npos.bitimage();
-var image = raw;
-while (image = raster.decode(image)) {
-  result.append(image);
-}
+// decode first raster image from raw
+var image = raster.decode(raw);
+console.log(renderer.render('text', image));
 
-console.log(result.render());
-
-result.toJimp().write(path.join(__dirname, 'output', path.basename(file, '.bin') + '.png'));
+image.save(path.join(__dirname, 'output', path.basename(file, '.bin') + '.png'));
