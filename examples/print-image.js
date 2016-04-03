@@ -12,10 +12,14 @@ device.open(function () {
     printer
       .align('ct')
       .bitimage(g, 's8')
+      .text('s8')
       .bitimage(g, 'd8')
+      .text('d8')
       .bitimage(g, 's24')
+      .text('s24')
       .bitimage(g, 'd24')
-      //.feed(6)
+      .text('d24')
+      .feed(6)
       .flush();
   });
 });

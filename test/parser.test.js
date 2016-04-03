@@ -39,7 +39,6 @@ describe('Parser', function () {
         assert.lengthOf(ast.entries, 1);
         assert.ok(ast.entries[0].data);
       });
-
     });
   });
 

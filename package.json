@@ -38,7 +38,8 @@
     "middist": "^0.2.5",
     "mutable-buffer": "^2.0.3",
     "proback": "^1.0.3",
-    "qr-image": "^3.1.0"
+    "qr-image": "^3.1.0",
+    "tessocr": "^0.1.0"
   },
   "optionalDependencies": {
     "async": "^2.0.0-rc.2",

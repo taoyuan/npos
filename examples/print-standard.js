@@ -9,7 +9,7 @@ var printer = new escpos.Printer(device);
 device.open(function () {
   printer
     .font('C')
-    .align('lt')
+    .align('ct')
     .style('bu')
     .size()
     .text('The quick brown fox jumps over the lazy dog')
