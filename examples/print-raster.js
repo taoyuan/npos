@@ -12,9 +12,9 @@ device.open(function () {
     printer
       .align('ct')
       .raster(g)
-      .raster(g, 'dw')
-      .raster(g, 'dh')
-      .raster(g, 'dwdh')
+      // .raster(g, 'dw')
+      // .raster(g, 'dh')
+      // .raster(g, 'dwdh')
       //.feed(6)
       .flush();
 

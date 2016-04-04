@@ -11,6 +11,7 @@ var raw = fs.readFileSync(file);
 
 // decode first raster image from raw
 var image = raster.decode(raw);
+console.log('(%d, %d)', image.width, image.height);
 console.log(renderer.render('text', image));
 
 image.save(path.join(__dirname, 'output', path.basename(file, '.bin') + '.png'));
