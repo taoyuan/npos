@@ -29,11 +29,11 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "bluebird": "^3.3.5",
+    "bluebird": "^3.4.1",
     "chalk": "^1.1.3",
     "iconv-lite": "^0.4.13",
-    "jimp": "^0.2.21",
-    "lodash": "^4.11.0",
+    "jimp": "^0.2.24",
+    "lodash": "^4.13.1",
     "lwim": "^0.1.3",
     "middist": "^0.2.5",
     "mutable-buffer": "^2.0.3",
@@ -42,13 +42,13 @@
     "tessocr": "^0.1.2"
   },
   "optionalDependencies": {
-    "async": "^2.0.0-rc.3",
+    "async": "^2.0.0-rc.6",
     "hexy": "^0.2.7",
     "usb": "^1.1.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.5.3"
   },
   "eslintConfig": {
     "extends": "xo-space",
