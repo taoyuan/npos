@@ -18,7 +18,6 @@ device.open(function () {
     .feed()
     .cut()
     .flush();
-
 });
 
 process.on('SIGINT', exit());
