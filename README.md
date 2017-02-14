@@ -96,7 +96,7 @@ Builtin decoders could be found [here](lib/parser/splitters.js)
 
 ## License
 
- © [taoyuan]()
+© [taoyuan](towyuan@outlook.com)
 
 [npm-image]: https://badge.fury.io/js/npos.svg
 [npm-url]: https://npmjs.org/package/npos
