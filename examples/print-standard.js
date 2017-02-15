@@ -2,8 +2,8 @@
 
 var escpos = require('../');
 
-// var device = new escpos.Console();
-var device = new escpos.USB();
+var device = new escpos.Console();
+// var device = new escpos.USB();
 var printer = new escpos.Printer(device);
 
 device.open(function () {
