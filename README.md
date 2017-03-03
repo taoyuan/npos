@@ -22,7 +22,39 @@ parser.parse(buffer).then(function (ast) {
 });
 ```
 
-### custom parser rules
+The `ast` form `parse` is like: 
+
+```
+{
+  raw: <Buffer ...>,
+  error: <error>,
+  tree: [
+    {
+      code: 27,         // command code in decimal 
+      hex: '1B',        // command code in hex
+      ascii: 'ESC',     // command code in ascii name
+      offset: 0,        // data offset from buffer
+      length: 2,        // data length 
+      fn: '@',          // command fn charater
+    },
+    ....
+  ],
+  entries: [            // decoded entries
+    {
+      type: 'raster',
+      nodes: [          // nodes handled by codec from ast
+      ...
+      ],
+      data: <Object>    // data decoded by codec
+    },
+    ...
+  ]
+}
+```
+
+#### rules
+
+`rules` is used to parse esc/pos binary to ast tree.
 
 Example rules:
 
@@ -66,7 +98,7 @@ rules[npos.ESC] = {     // 'ESC' commands
   'Z': [3, 'd16']
 };
 
-// Custom decoder with parameter buffer and offset specified with rule.
+// Custom splitter with parameter buffer and offset specified with rule.
 function ycc(buf, offset) {
   if (buf.length - offset < 3) {
     return buf.length;
@@ -84,15 +116,35 @@ function ycc(buf, offset) {
 or extend the builtin rules: 
 
 ```js
-
 var npos = require('npos');
-
-rules[npos.ESC]['&'] = [0, ycc];
-
+npos.rules[npos.ESC]['&'] = [0, ycc];
 ```
 
-Builtin decoders could be found [here](lib/parser/splitters.js)
+Here are [builtin rules](lib/parser/splitters.js) and [builtin splitters](lib/parser/splitters.js).
 
+#### codec
+
+`npos` use codec to decode from ast tree parsed from binary.
+
+Here are [builtin codecs](lib/codecs/index.js)
+
+We can extend codecs as need. For example: 
+
+```js
+// sampleCodec.js
+
+// commands supported
+exports.commands = ['GSv0'];   
+// decode from raw data and nodes
+exports.decode = function (raw, nodes) {  
+  // traverse nodes to decode and return result decoded
+}
+```
+
+```js
+var npos = require('npos');
+npos.codecs['sampleCodec'] = require('./sampleCodec');
+```
 
 ## License
 
