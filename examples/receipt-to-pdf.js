@@ -5,6 +5,7 @@ var path = require('path');
 var PDF = require('pdfkit');
 var PromiseA = require('bluebird');
 var iconv = require('iconv-lite');
+var Jimp = require('jimp');
 
 var npos = require('../');
 
@@ -27,18 +28,17 @@ var formats = {
 
 // parse raw to ast
 parser.parse(raw).then(function (ast) {
-  return PromiseA.map(ast.entries, function (entry) {
+  return PromiseA.mapSeries(ast.entries, function (entry) {
     // entry.type is the codec name
     switch (entry.type) {
       case 'text':
-        renderText(doc, entry.data);
-        break;
+        return renderText(doc, entry.data);
       case 'font':
-        renderFont(doc, entry.data);
-        break;
+        return renderFont(doc, entry.data);
       case 'bold':
-        renderBold(doc, entry.data);
-        break;
+        return renderBold(doc, entry.data);
+      case 'raster':
+        return renderImage(doc, entry.data);
       // TODO render more esc pos command
       default:
         console.log('[pdf]', 'Unknown entry type:', entry.type);
@@ -80,6 +80,18 @@ function renderFont(doc, data) {
 function renderBold(doc, data) {
   console.log('[pdf] bold:', data);
   formats.bold = data;
+}
+
+function renderImage(doc, data) {
+  return PromiseA.fromCallback(function (cb) {
+    Jimp.read(data.toBuffer(), cb);
+  }).then(function (image) {
+    return PromiseA.fromCallback(function (cb) {
+      image.getBuffer(Jimp.MIME_PNG, cb);
+    });
+  }).then(function (buffer) {
+    doc.image(buffer);
+  });
 }
 
 function decode(data) {
