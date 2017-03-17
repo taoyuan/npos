@@ -146,6 +146,10 @@ var npos = require('npos');
 npos.codecs['sampleCodec'] = require('./sampleCodec');
 ```
 
+### to pdf
+
+See: [example](examples/receipt-to-pdf.js)
+
 ## License
 
 © [taoyuan](towyuan@outlook.com)

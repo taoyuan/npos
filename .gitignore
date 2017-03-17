@@ -1,5 +1,5 @@
 node_modules
 coverage
 .idea
-examples/output/*.bmp
-examples/output/*.png
+examples/output/*
+!examples/output/.empty
