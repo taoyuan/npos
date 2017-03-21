@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 node_js:
   - v6
@@ -5,3 +6,16 @@ node_js:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y tesseract-ocr
+compiler:
+  - gcc
+  - clang
+install:
+- if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+    - clang
