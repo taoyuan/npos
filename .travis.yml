@@ -6,12 +6,7 @@ node_js:
   - v4
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y autoconf automake libtool
-  - sudo apt-get install -y autoconf-archive
-  - sudo apt-get install -y pkg-config
-  - sudo apt-get install -y libleptonica-dev
-  - sudo apt-get install -y libtesseract-dev
-  - sudo apt-get install -y tesseract-ocr
+  - sudo apt-get install -y libtesseract-dev libleptonica-dev tesseract-ocr-eng
 addons:
   apt:
     sources:
