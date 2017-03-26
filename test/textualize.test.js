@@ -19,7 +19,7 @@ describe('textualize', function () {
           language: 'pos.chs.fast'
         }
       }).then(function (results) {
-        assert.lengthOf(results, 1);
+        assert.ok(results.length);
         assert.include(results[0], '金额');
       });
     });
@@ -30,7 +30,7 @@ describe('textualize', function () {
       type: 'text',
       data: new Buffer('h\u0000el\u0000lo\u0000 \u0000worl\u0000\u0000\u0000d')
     }]).then(function (results) {
-      assert.lengthOf(results, 1);
+      assert.ok(results.length);
       assert.equal(results[0], 'hello world');
     });
   });

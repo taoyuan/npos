@@ -26,7 +26,7 @@ describe('Parser', function () {
       var raw = require('./fixtures/text-1');
       return parser.parse(raw).then(function (ast) {
         assert.ok(ast);
-        assert.ok(ast.entries.length > 1);
+        assert.ok(ast.entries.length);
         assert.ok(ast.entries[0].data);
       });
     });
@@ -36,7 +36,7 @@ describe('Parser', function () {
       var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster-2.bin'));
       parser.parse(raw).then(function (ast) {
         assert.ok(ast);
-        assert.ok(ast.entries.length > 1);
+        assert.ok(ast.entries.length);
         assert.ok(ast.entries[0].data);
       });
     });
