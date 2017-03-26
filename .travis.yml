@@ -1,14 +1,9 @@
 language: node_js
+env:
+  - CXX=g++-4.8
 node_js:
   - v6
   - v4
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y tesseract-ocr
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
-compiler:
-  - gcc
-  - clang
 addons:
   apt:
     sources:
@@ -16,4 +11,3 @@ addons:
     packages:
       - gcc-4.8
       - g++-4.8
-      - clang
