@@ -3,6 +3,7 @@
 var assert = require('chai').assert;
 var fs = require('fs');
 var path = require('path');
+var s = require('./support');
 var npos = require('..');
 
 describe('Parser', function () {
@@ -33,7 +34,7 @@ describe('Parser', function () {
 
     it('should parse raster raw data', function () {
       var parser = npos.parser();
-      var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster-2.bin'));
+      var raw = fs.readFileSync(s.fixtures('raster-2.bin'));
       parser.parse(raw).then(function (ast) {
         assert.ok(ast);
         assert.ok(ast.entries.length);
