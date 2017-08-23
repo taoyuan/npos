@@ -25,9 +25,6 @@
     "graphic",
     "bitmap"
   ],
-  "publishConfig": {
-    "registry": "http://registry.npmjs.com"
-  },
   "dependencies": {
     "bluebird": "^3.4.7",
     "iconv-lite": "^0.4.15",
