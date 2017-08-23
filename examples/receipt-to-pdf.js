@@ -14,7 +14,7 @@ var npos = require('../');
 npos.codecs.bold = require('./codecs/text-bold');
 
 var parser = npos.parser();
-var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'raster.bin'));
+var raw = fs.readFileSync(path.join(__dirname, 'fixtures', 'receipt.bin'));
 
 // prepare pdf instance
 var doc = new PDF();
