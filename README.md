@@ -1,4 +1,7 @@
 # npos [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/taoyuan/npos.svg)](https://greenkeeper.io/)
+
 > A ESC/POS library for node
 
 ## Installation
